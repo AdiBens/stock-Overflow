@@ -1,0 +1,30 @@
+the db should hold
+1.articles, every article should hold : {
+ id: 5,  ///// from database automatic///
+    title: 'title'
+    date: new Date().toLocaleString([], {
+      year: "numeric",
+      month: "2-digit",
+      day: "2-digit",
+      hour: "2-digit",
+      minute: "2-digit",
+    }),
+    creator: "Adi Ben shuhsan"  /// getting from the slice of the user in redux///,
+    category: "News",
+  },
+},
+
+2.users, every user hold :{
+	id:3,  ///// from database automatic///
+	name:'someName',
+	email:'gshadiadi@gmail.com',
+	password:' xa1212ejadc1' // increapt password//,
+	balance:"100,000$" //every user start with 100K//,
+	myCoins:[{name:'bnb',amount:'150'},{name:'eth',amount:'20'}]//array of user coins with the name and amount//
+	watchList:['btc','eth','bnb'] //array of coins that the user follows//,
+},
+
+
+db access:
+username: adibens
+password: adidas123
