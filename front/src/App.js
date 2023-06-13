@@ -50,7 +50,6 @@ function App() {
           <Header formatter={formatter} />
           <Routes>
             <Route path="/" element={<Home formatter={formatter} />} />
-            {/* <Route path="/" element={<DemoHome formatter={formatter} />} /> */}
             <Route
               path="/portfolio"
               element={<Portfolio formatter={formatter} />}

@@ -6,14 +6,16 @@ import Modal from "@mui/material/Modal";
 import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
 import axios from "axios";
+import { useSelector } from "react-redux";
 
 function Mailer() {
+  const user = useSelector((state) => state.user.user[0]);
   const [open, setOpen] = useState(false);
   const handleOpen = () => setOpen(true);
   const handleClose = () => setOpen(false);
   const [mail, setMail] = useState({
     name: "",
-    email: "",
+    email: user.email,
     content: "",
   });
   const [showSuccess, setShowSuccess] = useState(false);
@@ -28,7 +30,7 @@ function Mailer() {
     if (data == "sent") {
       setMail({
         name: "",
-        email: "",
+        email: user.email,
         content: "",
       });
       setShowSuccess(true);
@@ -45,7 +47,14 @@ function Mailer() {
 
   return (
     <div>
-      <Button onClick={handleOpen} style={{ textDecoration: "underline" }}>
+      <Button
+        onClick={handleOpen}
+        style={{
+          textDecoration: "underline",
+          backgroundColor: " rgb(245, 245, 104)",
+          padding: "3px",
+        }}
+      >
         Contact
       </Button>
       <Modal
@@ -55,6 +64,7 @@ function Mailer() {
         aria-describedby="modal-modal-description"
       >
         <Box
+          className="mailerModal"
           sx={{
             position: "absolute",
             top: "50%",
@@ -74,7 +84,12 @@ function Mailer() {
             id="modal-modal-title"
             variant="h4"
             component="h2"
-            style={{ textAlign: "center", marginBottom: "40px" }}
+            style={{
+              textAlign: "center",
+              marginBottom: "40px",
+              textDecoration: "underline ",
+              color: "yellow",
+            }}
           >
             Contact
           </Typography>
@@ -82,7 +97,6 @@ function Mailer() {
             <div className="mailerInputs">
               <input
                 type="text"
-                name="firstname"
                 placeholder="Name"
                 className="input"
                 value={mail.name}
@@ -94,15 +108,10 @@ function Mailer() {
               />
               <input
                 type="email"
-                name="phoneNumber"
                 placeholder="Email"
                 className="input"
                 value={mail.email}
-                onChange={(e) => {
-                  setMail((oldVal) => {
-                    return { ...oldVal, email: e.target.value };
-                  });
-                }}
+                disabled
               />
             </div>
             <br />

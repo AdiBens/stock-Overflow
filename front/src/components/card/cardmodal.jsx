@@ -9,6 +9,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { addToWatchList } from "../../context/userSlice";
 import LiveChart from "./liveChart/livechart";
 import BuyCoin from "./buycoin";
+import StockImg from "../UI/StockImg";
 
 export default function CardModal({ coinData, coinImg, formatter }) {
   const [open, setOpen] = React.useState(false);
@@ -68,11 +69,11 @@ export default function CardModal({ coinData, coinImg, formatter }) {
             <CloseIcon />
           </span>
           <div className="cardModalTitle">
-            <img src={coinImg} alt="Coin Img" className="cardModalImg" />
+            <StockImg src={coinImg} className="cardModalImg" />
             <Typography id="modal-modal-title" variant="h4" component="h2">
               {coinData.name}
             </Typography>
-            <img src={coinImg} alt="Coin Img" className="cardModalImg" />
+            <StockImg src={coinImg} className="cardModalImg" />
           </div>
           <div className="cardModalMain">
             <div className="modalColumn">

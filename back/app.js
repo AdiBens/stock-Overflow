@@ -8,19 +8,16 @@ const bcrypt = require("bcrypt");
 const mongoose = require("mongoose");
 const validator = require("validator");
 const nodemailer = require("nodemailer");
-const e = require("express");
+require("dotenv").config();
 
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(bodyParser.json());
-const apiKey = "a55f1c42-c137-4c33-ad4b-7fc6f9edd94e";
-const apiKey2 = "c842198a-4e67-48ae-83e8-24f95c77440a";
+const apiKey = process.env.API_KEY;
+const apiKey2 = process.env.API_KEY2;
+const dbConnection = process.env.DB_CONNECTION;
 
-mongoose
-  .connect(
-    "mongodb+srv://adibens:adidas123@stack-overflow.gpaytqh.mongodb.net/stockoverflow"
-  )
-  .then(() => console.log("Connected to Db!"));
+mongoose.connect(dbConnection).then(() => console.log("Connected to Db!"));
 
 const userSchema = mongoose.Schema({
   name: String,
@@ -65,8 +62,8 @@ const History = new mongoose.model("actionhistories", historySchema);
 const transporter = nodemailer.createTransport({
   service: "gmail",
   auth: {
-    user: "gshadiadi@gmail.com",
-    pass: "hmvljeduychqezny",
+    user: process.env.EMAIL_USER,
+    pass: process.env.EMAIL_PASSWORD,
   },
 });
 
@@ -331,7 +328,8 @@ app.post("/sethistory/api", (req, res) => {
 app.post("/sendmail/api", (req, res) => {
   transporter
     .sendMail({
-      from: "gshadiadi@gmail.com",
+      // from: "gshadiadi@gmail.com",
+      from: req.body.params.mail.email,
       to: "gshadiadi@gmail.com",
       subject: `Become Writer `,
       text: "Hello world?",

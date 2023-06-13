@@ -127,9 +127,11 @@ body {
 }
 .footer {
   margin-top: auto;
-  width: 100%;
+  width: 90%;
   padding-left: 20px;
-  color: rgb(31, 7, 7);
+  position: absolute;
+  bottom: 5px;
+  left: 10px;
 }
 .articlesPage {
   display: flex;
@@ -690,6 +692,8 @@ input::-webkit-inner-spin-button {
 .historyTable th,
 .historyTable td {
   padding: 12px 15px;
+  min-width: 130px;
+  max-width: 130px;
 }
 .css-1mk9mw3-MuiList-root {
   display: flex;
@@ -698,6 +702,14 @@ input::-webkit-inner-spin-button {
 .css-1mk9mw3-MuiList-root > a {
   padding: 20px;
   margin-bottom: 5px;
+}
+.mailerModal {
+  background-image: linear-gradient(
+      to right,
+      rgba(0, 0, 0, 0.6),
+      rgba(0, 0, 0, 0.4)
+    ),
+    url("loginBackground.jpg");
 }
 
 @keyframes slideInFromTop {
@@ -746,14 +758,21 @@ input::-webkit-inner-spin-button {
   }
 }
 
+@media screen and (max-width: 700px) {
+  .css-pejs47 {
+    width: 440px !important;
+    left: 90%;
+  }
+}
+
 @media screen and (max-width: 500px) {
   .css-1wnsr1i,
   .css-1ky203s,
   .css-13y6qo8,
   .css-ku0c4p,
-  .css-4an5qy,
+  .css-pejs47,
   .css-aobf5f,
-  .css-rx7xpb,
+  .css-owvjaj,
   .css-17y2w4r,
   .historyContainer {
     width: 270px !important;
@@ -773,6 +792,10 @@ input::-webkit-inner-spin-button {
   .portfolioTop > div {
     font-size: 12px;
     padding: 5px;
+  }
+
+  .footer > p {
+    font-size: 12px;
   }
 }
 
