@@ -23,7 +23,7 @@ body {
       rgba(13, 13, 13, 0.5)
     ),
     url("loginBackground.jpg"); */
-  background-color: rgba(0, 0, 0, 0.5);
+  /* background-color: rgba(0, 0, 0, 0.5); */
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;
@@ -31,7 +31,18 @@ body {
   padding: 0 2rem;
   border: 3px solid black;
   border-radius: 20px;
-  box-shadow: rgb(49, 59, 68) 0px 20px 40px -10px;
+  /* box-shadow: rgb(49, 59, 68) 0px 20px 40px -10px; */
+
+  /*          */
+  background-color: rgba(0, 0, 0, 0.7);
+  box-shadow: rgba(62, 46, 240, 0.4) 5px 5px, rgba(46, 120, 240, 0.3) 10px 10px,
+    rgba(46, 88, 240, 0.2) 15px 15px, rgba(49, 46, 240, 0.1) 20px 20px;
+  /* 
+  box-shadow: rgba(50, 50, 93, 0.25) 0px 50px 100px -20px,
+    rgba(0, 0, 0, 0.3) 0px 30px 60px -30px,
+    rgba(10, 37, 64, 0.35) 0px -2px 6px 0px inset; */
+  /*       */
+
   animation: fadeIn 1.5s ease;
 }
 @keyframes fadeIn {

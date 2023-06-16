@@ -7,7 +7,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import { useState } from "react";
 import axios from "axios";
 import { useSelector } from "react-redux";
-
+// this is a temp comment
 function Mailer() {
   const user = useSelector((state) => state.user.user[0]);
   const [open, setOpen] = useState(false);
@@ -88,7 +88,6 @@ function Mailer() {
               textAlign: "center",
               marginBottom: "40px",
               textDecoration: "underline ",
-              color: "yellow",
             }}
           >
             Contact

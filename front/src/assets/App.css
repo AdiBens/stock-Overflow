@@ -193,6 +193,7 @@ body {
   font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif !important;
 }
 .date {
+  margin-top: 3px;
   position: relative;
   bottom: 0.6rem;
   filter: opacity(0.8);
@@ -704,12 +705,12 @@ input::-webkit-inner-spin-button {
   margin-bottom: 5px;
 }
 .mailerModal {
-  background-image: linear-gradient(
+  /* background-image: linear-gradient(
       to right,
       rgba(0, 0, 0, 0.6),
       rgba(0, 0, 0, 0.4)
     ),
-    url("loginBackground.jpg");
+    url("loginBackground.jpg"); */
 }
 
 @keyframes slideInFromTop {

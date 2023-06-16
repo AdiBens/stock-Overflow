@@ -28,7 +28,7 @@ export default function CreateNewArticle() {
   const [category, setCategory] = useState("Coins Update");
 
   const handleChange = (event) => {
-    setCategory(event.target.value); // Update the selected category
+    setCategory(event.target.value);
   };
   const handleCreate = () => {
     if (newArticle.title && newArticle.content) {
@@ -62,8 +62,10 @@ export default function CreateNewArticle() {
             left: "50%",
             transform: "translate(-50%, -50%)",
             width: 400,
+            height: 500,
             bgcolor: "background.paper",
             border: "2px solid #000",
+            borderRadius: "20px",
             boxShadow: 24,
             p: 4,
           }}
@@ -73,7 +75,7 @@ export default function CreateNewArticle() {
           </span>
           <Typography
             id="modal-modal-title"
-            variant="h6"
+            variant="h4"
             component="h2"
             style={{ textDecoration: "underline", textAlign: "center" }}
           >
